@@ -10,7 +10,7 @@ stop.disabled = true;
 
 function onStartPress(event) {
   document.body.style.backgroundColor = getRandomHexColor();
-  bodyColor = setInterval(() => {
+  const bodyColor = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, INTERVAL_DURATION);
 
