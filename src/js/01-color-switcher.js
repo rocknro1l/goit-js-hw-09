@@ -5,8 +5,10 @@ start.addEventListener('click', onStartPress);
 stop.addEventListener('click', onStopPress);
 
 const INTERVAL_DURATION = 1000;
+stop.disabled = true;
 
 function onStartPress(event) {
+  document.body.style.backgroundColor = getRandomHexColor();
   bodyColor = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, INTERVAL_DURATION);
