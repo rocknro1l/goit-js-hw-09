@@ -4,6 +4,7 @@ const start = document.querySelector('[data-start]');
 start.addEventListener('click', onStartPress);
 stop.addEventListener('click', onStopPress);
 
+const INTERVAD_DURATION = 1000;
 const INTERVAL_DURATION = 1000;
 stop.disabled = true;
 
