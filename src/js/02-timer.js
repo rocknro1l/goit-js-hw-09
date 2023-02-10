@@ -9,6 +9,7 @@ const refs = {
   timerFielHours: document.querySelector('[data-hours]'),
   timerFieldMinutes: document.querySelector('[data-minutes]'),
   timerFieldSeconds: document.querySelector('[data-seconds]'),
+  timerInput: document.querySelector('#datetime-picker'),
 };
 
 refs.btnTimerStart.disabled = true;
@@ -55,11 +56,12 @@ function addLeadingZero(value) {
 
 function onTimerStart() {
   const selectedDate = fp.selectedDates[0];
+  refs.timerInput.disabled = true;
+  refs.btnTimerStart.disabled = true;
 
   timerId = setInterval(() => {
     const startTime = new Date();
     const countdown = selectedDate - startTime;
-    refs.btnTimerStart.disabled = true;
 
     if (countdown < 0) {
       clearInterval(timerId);
